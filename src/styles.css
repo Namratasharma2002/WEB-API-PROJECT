@@ -1,0 +1,29 @@
+/* src/styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .App-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+/* src/styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.App-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+  
