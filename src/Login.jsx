@@ -1,9 +1,6 @@
-// src/Login.js
-
-import { AppBar, Box, Button, Container, TextField, Toolbar, Typography } from '@mui/material';
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
-
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -25,15 +22,8 @@ const Login = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Login
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Container maxWidth="xs" sx={{ mt: 8, mb: 8, display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ bgcolor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <Container maxWidth="xs">
         <Box
           sx={{
             display: 'flex',
@@ -48,7 +38,7 @@ const Login = () => {
           <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
             Login
           </Typography>
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleLogin} style={{ width: '100%' }}>
             <TextField
               variant="outlined"
               margin="normal"

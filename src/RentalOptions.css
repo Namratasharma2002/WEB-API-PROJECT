@@ -1,30 +1,25 @@
-/* App.css */
-.App {
-  text-align: center;
-}
-
-.login {
-  margin-top: 20%;
-}
-
-.login button {
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
 /* RentalOptions.css */
 .rental-options {
   font-family: Arial, sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f9f9fa;
   padding: 20px;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-header h1 {
+  margin: 0;
+  color: black; /* Change the color to black */
 }
 
 .search-bar {
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto; /* Center the search bar */
 }
 
 .search-bar input {
@@ -38,10 +33,18 @@
   margin-left: 10px;
 }
 
+nav {
+  display: flex;
+  gap: 10px;
+}
+
 .nav-button {
-  margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
+}
+
+.header-right {
+  margin-left: auto; /* Push the nav to the right */
 }
 
 .card {

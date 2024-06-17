@@ -1,18 +1,17 @@
-// src/Register.jsx
-
-import { AppBar, Box, Button, Container, TextField, Toolbar, Typography } from '@mui/material';
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [message, setMessage] = useState('');
 
   const handleRegister = (e) => {
     e.preventDefault();
 
-    if (username && password && email) {
+    if (username && password && email && phoneNumber) {
       // Simulate a successful registration process
       setMessage('Registration successful');
     } else {
@@ -24,21 +23,14 @@ const Register = () => {
     if (message) {
       const timer = setTimeout(() => {
         setMessage('');
-      }, 1000); // Display message for 4.5 seconds
+      }, 4500); // Display message for 4.5 seconds
       return () => clearTimeout(timer); // Clear timeout if component unmounts
     }
   }, [message]);
 
   return (
-    <Box sx={{ bgcolor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Register
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Container maxWidth="xs" sx={{ mt: 8, mb: 8, display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ bgcolor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <Container maxWidth="xs">
         <Box
           sx={{
             display: 'flex',
@@ -47,13 +39,13 @@ const Register = () => {
             p: 3,
             borderRadius: 1,
             boxShadow: 3,
-            bgcolor: 'white',
+            bgcolor: 'white', // Set background color to white
           }}
         >
           <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
             Register
           </Typography>
-          <form onSubmit={handleRegister}>
+          <form onSubmit={handleRegister} style={{ width: '100%' }}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -79,6 +71,19 @@ const Register = () => {
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="phoneNumber"
+              label="Phone Number"
+              type="tel"
+              id="phoneNumber"
+              autoComplete="tel"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <TextField
               variant="outlined"
